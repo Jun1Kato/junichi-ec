@@ -11,20 +11,20 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('', function () {
     return redirect('home');
 });
 
-Route::get('/home', 'ECcontroller@showHome');
+Route::get('home', 'ECcontroller@showHome');
 
-Route::get('/signup', 'ECcontroller@showSignUp');
+Route::get('signup', 'ECcontroller@showSignUp');
 
-Route::get('/signin', 'ECcontroller@showSignIn');
+Route::get('signin', 'ECcontroller@showSignIn');
 
-Route::get('/product', 'ECcontroller@showProduct');
+Route::get('product', 'ECcontroller@showProduct');
 
-Route::get('/purchase', 'ECcontroller@showPurchase');
+Route::get('purchase', 'ECcontroller@showPurchase');
 
-Route::post('/purchase', 'ECcontroller@exePurchase');
+// Route::post('purchase', 'ECcontroller@exePurchase');
 
-Route::get('/complete', 'ECcontroller@showComplete');
+Route::post('complete', 'ECcontroller@exePurchase');

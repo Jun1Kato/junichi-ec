@@ -20,17 +20,23 @@ class ECcontroller extends Controller
     {
         return view('signin');
     }
-    public function showProduct()
+    public function showProduct(Request $request)
     {
-        return view('product');
+        $value = $request->input('id');
+        return view('product')->with('val', $value);
+        ;
     }
     public function showPurchase()
+    // public function showPurchase(Request $request)
     {
+        // $value = $request->input('id');
+        // return view('purchase')->with('val', $value);
         return view('purchase');
     }
-    public function exePurchase()
+    public function exePurchase(Request $request)
     {
-        return redirect('complete');
+        $firstname = $request->firstname;
+        return view('complete')->with('name', $firstname);
     }
     public function showComplete()
     {
