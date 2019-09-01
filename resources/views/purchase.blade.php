@@ -9,8 +9,7 @@
 <div class="wrapper">
   <a href="home">>>HOME</a>
   {{Form::open(['url' => 'complete', 'method' => 'POST'])}}
-    {{Form::hidden('product')}}<br>
-    {{--{{Form::hidden('product', '{{$val}}')}}<br>--}}
+    <input name="product" type="hidden"　value={{$val}}><br>
     <ul class="form">
       <li class="input"><span>quantity:</span> {{Form::text('quantity')}}<br></li>
       <li class="input"><span>firstname:</span> {{Form::text('firstname')}}<br></li>

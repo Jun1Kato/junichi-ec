@@ -16,11 +16,10 @@ class CreateOrdersTable extends Migration
         if (!Schema::hasTable('orders')) {
             Schema::create('orders', function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('user_id');
                 $table->string('product_id');
                 $table->string('quantity');
                 $table->string('firstname');
-                $table->string('lastbame');
+                $table->string('lastname');
                 $table->string('address');
                 $table->timestamps();
             });

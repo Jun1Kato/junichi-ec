@@ -4,7 +4,7 @@
   {{ ¥Auth::user()->name }}さん
 @endif
 <div class="wrapper">
-  <h1>THANK YOU {{$name}}!</h1>
+  <h1>THANK YOU {{$firstname}}!</h1>
   {{Form::button('HOME', ['class' => 'btn', 'onclick' => "location.href='home';"]) }}
 </div>
 @include('footer')

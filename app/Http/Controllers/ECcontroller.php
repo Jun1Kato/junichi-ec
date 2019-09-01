@@ -26,17 +26,15 @@ class ECcontroller extends Controller
         return view('product')->with('val', $value);
         ;
     }
-    public function showPurchase()
-    // public function showPurchase(Request $request)
+    public function showPurchase(Request $request)
     {
-        // $value = $request->input('id');
-        // return view('purchase')->with('val', $value);
-        return view('purchase');
+        $value = $request->input('id');
+        return view('purchase')->with('val', $value);
     }
     public function exePurchase(Request $request)
     {
         $firstname = $request->firstname;
-        return view('complete')->with('name', $firstname);
+        return view('complete')->with('firstname', $firstname);
     }
     public function showComplete()
     {
