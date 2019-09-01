@@ -34,8 +34,12 @@ class ECcontroller extends Controller
     public function exePurchase(Request $request)
     {
         $firstname = $request->firstname;
-        return view('complete')->with('firstname', $firstname);
-    }
+        $product = $request->product;
+        $quantity = $request->quantity;
+        $lastname = $request->lastname;
+        $address = $request->address;
+
+        return view('complete')->with('firstname', $firstname);    }
     public function showComplete()
     {
         return view('complete');
