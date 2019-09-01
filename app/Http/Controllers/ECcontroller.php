@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ECcontroller extends Controller
@@ -38,7 +39,19 @@ class ECcontroller extends Controller
         $quantity = $request->quantity;
         $lastname = $request->lastname;
         $address = $request->address;
+        $now = Carbon::now();
 
+        DB::table('orders')->insert(
+            [
+                'product_id' => $product,
+                'quantity' => $quantity,
+                'firstname' => $firstname,
+                'lastname' => $lastname,
+                'address' => $address,
+                'created_at' => $now,
+                'updated_at' => $now
+            ]
+        );
         return view('complete')->with('firstname', $firstname);    }
     public function showComplete()
     {
